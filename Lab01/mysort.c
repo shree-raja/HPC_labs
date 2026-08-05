@@ -23,7 +23,7 @@ void bubbleSort(int arr[])
     }
 }
 
-// swap two values
+// swap
 void swap(int *a,int *b)
 {
     int temp=*a;
@@ -31,7 +31,7 @@ void swap(int *a,int *b)
     *b=temp;
 }
 
-// partiton for quick sort
+// partition
 int partition(int arr[],int low,int high)
 {
     int pivot=arr[high];
@@ -66,13 +66,14 @@ void quickSort(int arr[],int low,int high)
 
 int main()
 {
-    int bubble[SIZE];
-    int quick[SIZE];
+    static int bubble[SIZE];
+    static int quick[SIZE];
 
     srand(time(NULL));
 
-    // genrate random numbers
     int i;
+
+    // random numbers
     for(i=0;i<SIZE;i++)
     {
         bubble[i]=rand()%100;
@@ -80,24 +81,19 @@ int main()
     }
 
     clock_t start,end;
+    double bubbleTime,quickTime;
 
-    // checking bubble sort time
     start=clock();
-
     bubbleSort(bubble);
-
     end=clock();
 
-    double bubbleTime=(double)(end-start)/CLOCKS_PER_SEC;
+    bubbleTime=(double)(end-start)/CLOCKS_PER_SEC;
 
-    // checking quick sort time
     start=clock();
-
     quickSort(quick,0,SIZE-1);
-
     end=clock();
 
-    double quickTime=(double)(end-start)/CLOCKS_PER_SEC;
+    quickTime=(double)(end-start)/CLOCKS_PER_SEC;
 
     printf("bubble sort time : %.6f seconds\n",bubbleTime);
     printf("quick sort time : %.6f seconds\n",quickTime);
