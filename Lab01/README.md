@@ -14,4 +14,4 @@ Investigate an application's performance with nearly 50 years of daily temperatu
 - Evaluate the possibility of parallel execution.
 
 ## Results
-Quick Sort performed better than Bubble Sort due to its lower time complexity. Compiler optimizations improved execution efficiency by generating more optimized code.
+Quick Sort performed better than Bubble Sort. Compiler optimizations improved execution efficiency by generating more optimized code.
